@@ -1,29 +1,73 @@
- <!DOCTYPE html>
+ <?php
+session_start();
+if(!isset($_SESSION['user'])){
+header("location:login.php");
+}
+?>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Student System</title>
     <style>
-        /* CSS कोड यहाँ से शुरू */
-        body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            text-align: center; 
-            margin-top: 100px; 
-            background-color: #f4f7f6;
-        }
-        h1 { color: #333; }
-        .btn { 
-            padding: 15px 25px; 
-            color: white; 
-            text-decoration: none; 
-            border-radius: 8px; 
-            margin: 10px; 
-            display: inline-block;
-            font-weight: bold;
-        }
-        .btn-add { background: #007bff; }
-        .btn-view { background: #28a745; }
-        /* CSS कोड यहाँ खत्म */
+    
+    body { 
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        
+        background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('school.jpg.jpg') no-repeat center center fixed;
+        background-size: cover;
+        text-align: center; 
+        margin: 0; 
+        padding-top: 100px;
+        height: 100vh;
+        box-sizing: border-box;
+    }
+
+    h1 { 
+        color: #ffffff; 
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.8); 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px; 
+        font-size: 40px;
+    }
+
+    p { 
+        color: #ffffff; 
+        font-size: 22px; 
+        font-weight: 500; 
+        text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+        margin-bottom: 30px;
+    }
+
+    .btn { 
+        padding: 15px 30px; 
+        color: white; 
+        text-decoration: none; 
+        border-radius: 8px; 
+        margin: 10px; 
+        display: inline-block;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.3s;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+
+    .btn:hover {
+        transform: translateY(-3px); 
+        box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    }
+
+    .btn-add { background: #007bff; }
+    .btn-add:hover { background: #0056b3; }
+
+    .btn-view { background: #28a745; }
+    .btn-view:hover { background: #218838; }
+
+
+  
     </style>
 </head>
 <body>
